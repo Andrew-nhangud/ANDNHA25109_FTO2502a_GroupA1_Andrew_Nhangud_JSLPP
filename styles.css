@@ -491,69 +491,78 @@ left: 0px;
 }
 
 @media (min-width: 1024px) {
-  body {
-    display: grid;
-    grid-template-columns: 0.5fr 2fr;
-  }
+body {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr;
+}
 
-  .desktop-add-task {
-    display: block; /* Show on larger screens */ 
-    position: absolute;
-    left: 900px;
-    width: 130px;
-    height: 38px;
-
-  }
+.desktop-add-task {
+  display: block; /* Show on larger screens */ 
+  position: absolute;
+  left: 900px;
+  width: 130px;
+  height: 38px;
+}
 
    /*styles for modal content  */
-  .modal{
-    overflow: hidden;
-   }
-  .modal-content{
-    margin-left: 590px;
-    width: 479px;
-    height: 479px;
-    top: -50px;
-  }
+.modal{
+  overflow: hidden;
+}
+.modal-content{
+  margin-left: 590px;
+  width: 479px;
+  height: 479px;
+  top: -50px;
+}
 
   /* styles for modal buttons */
-  .form-btn{
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-  }
-  .save-btn{
-    width: 200px;
-  }
-  .delete-btn{
-    width: 200px;
-  }
+.form-btn{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+.save-btn{
+  width: 200px;
+}
+.delete-btn{
+  width: 200px;
+}
 
-  .cards-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    width: 100%;
-    padding: 0 25px 0 25px;
-  }
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  padding: 0 25px 0 25px;
+}
 
   /* side bar styles */
-  .side-bar {
-    display: block;
-    background-color: var(--secondary-clr);
-    width: 300px;
-    height: 678px;
-    padding-bottom: 282px;
-  }
-  .side-bar button {
-    width: 276px;
-  }
-  .main-header {
-    height: 96px;
-  }
+.side-bar {
+  display: block;
+  background-color: var(--secondary-clr);
+  width: 300px;
+  height: 678px;
+  padding-bottom: 282px;
+}
+.side-bar button {
+  width: 276px;
+}
 
-  .main-header h2 {
-    font-size: 24px;
-    font-weight: bold;
-  }
+.main-header {
+  height: 96px;
+}
+.main-header h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* styles for the toggle */
+.theme-toggle-container{
+  width: 251px;
+}
+
+  /* displays the sidebar */
+.hide-sidebar-btn {
+  display: none !important;
+}
 }
