@@ -49,9 +49,10 @@ body {
 /* the container for the modals */
 .modal-content {
   position: relative;
-  background-color: #fefefe;
+  background-color: var(--secondary-clr);
   margin: 15% auto; 
   padding: 20px;
+  border-radius: 10px;
   border: 1px solid #888;
   width: 343px; 
   height: 600px;
@@ -368,6 +369,62 @@ margin-top: 18px;
   bottom: 70px;
 }
 
+/* styles for the nofication modal */
+#notificationModal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+  z-index: 1000;
+}
+#notificationModal .modal-content {
+  width: 300px;
+  height: 100px;
+  border-radius: 10px;
+  background-color: var(--secondary-clr);
+  margin: 20% auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#notificationModal h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-clr);
+}
+
+/* styles for the confirmation modal */
+#confirmationModal {
+  display: none;/* Hidden by default */
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);/* Semi-transparent background */
+  z-index: 1000;
+}
+#confirmationModal .modal-content {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  background-color: var(--secondary-clr);
+  margin: 20% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#confirmationModal h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-clr);
+  margin-bottom: 20px;
+}
+#confirmationModal .form-btn {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
 /* Ensure sidebar is hidden on smaller screens */
 @media (max-width: 767px) {
 .side-bar {
