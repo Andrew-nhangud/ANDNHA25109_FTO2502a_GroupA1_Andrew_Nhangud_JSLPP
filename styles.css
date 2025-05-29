@@ -356,6 +356,13 @@ margin-top: 18px;
   background-color: green;
 }
 
+/* Ensure sidebar is hidden on smaller screens */
+@media (max-width: 767px) {
+  .side-bar {
+    display: none !important;
+  }
+}
+
 /* media querys */
 @media (min-width: 768px) {
 body {
@@ -494,6 +501,10 @@ left: 0px;
 body {
   display: grid;
   grid-template-columns: 0.5fr 2fr;
+}
+
+body.sidebar-hidden .desktop-add-task {
+  transform: translateX(300px); /* Shift the button to the left */
 }
 
 .desktop-add-task {
