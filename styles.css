@@ -355,6 +355,19 @@ margin-top: 18px;
   background-color: green;
 }
 
+/* Style for the button to show the hidden sidebar */
+.show-sidebar{
+  display: none;
+  background-color: #A8A4FF;
+  width: 56px;
+  height: 48px;
+  font-size: 24px;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  position: fixed;
+  bottom: 70px;
+}
+
 /* Ensure sidebar is hidden on smaller screens */
 @media (max-width: 767px) {
 .side-bar {
