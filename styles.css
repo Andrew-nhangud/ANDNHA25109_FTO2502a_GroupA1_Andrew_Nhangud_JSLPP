@@ -23,6 +23,7 @@ body.dark-mode {
 }
 body {
   background-color: var(--background-clr);
+  color: var(--primary-clr);
 }
 
 
@@ -67,15 +68,17 @@ body {
   color: var(--primary-clr);
 }
 .close { /* button for closing the modals */
-  position: absolute;
+  position: absolute;  
   top: 11px;
   right: 39px; 
   width: 3px;
   height: 18px;
   font-size: 28px;
   color: red;
-  background-color: #fff;
   border: none;
+  font-weight: bold;
+  background-color: transparent; /* to change the backgorund of the button */
+  cursor: pointer;
 }
 .close:hover,
 .close:focus {
@@ -355,91 +358,136 @@ margin-top: 18px;
 
 /* media querys */
 @media (min-width: 768px) {
-  body {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-  }
+body {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+/* Shift the add task button when sidebar is hidden */
+body.sidebar-hidden .desktop-add-task {
+  transform: translateX(250px); /* Shift the button to the left */
+}
+  /* Remove grid layout when sidebar is hidden */
+body.sidebar-hidden {
+  display: block !important; /* Remove grid layout */
+}
+  /* Expand cards container to full width when sidebar is hidden */
+body.sidebar-hidden .cards-container {
+  width: 100% !important;
+  padding: 0 16px;
+}
+  /* Expand main header to full width and adjust padding when sidebar is hidden */
+body.sidebar-hidden .main-header {
+  width: 100% !important;
+  padding-left: 16px;
+}
+  /* Hide the sidebar when sidebar is hidden */
+body.sidebar-hidden .side-bar {
+  display: none !important;
+}
+  /* Remove left margin and expand width for cards and header when sidebar is hidden */
+body.sidebar-hidden .cards-container,
+body.sidebar-hidden .main-header {
+  margin-left: 0 !important;
+  width: 100% !important;
+}
 
 .mobile-add-task {
-    display: none; /* Hide on larger screens */
-
-  }
-  .desktop-add-task {
-    display: block; /* Show on larger screens */ 
-    position: absolute;
-    left: 400px;
-    width: 100px;
-    height: 28px;
-    background-color: var(--accent-clr);
-    border: none;
-    border-radius: 24px;
-  }
-  .desktop-add-task:hover {
+  display: none; /* Hide on larger screens */
+}
+.desktop-add-task {
+  display: block; /* Show on larger screens */ 
+  position: absolute;
+  left: 400px;
+  width: 100px;
+  height: 28px;
+  background-color: var(--accent-clr);
+  border: none;
+  border-radius: 24px;
+}
+.desktop-add-task:hover {
   transform: translateY(-5px);
   background-color: var(--primary-clr);
   color: var(--secondary-clr);
   box-shadow: 0 4px 12px rgba(15, 15, 15, 0.6);
 }
-  .desktop-add-task span{
-    color: var(--secondary-clr);
-  }
+.desktop-add-task span{
+  color: var(--secondary-clr);
+}
 
   /*styles for modal content  */
-  .modal-content{
-    margin-left: 290px;
-    width: 400px;
-  }
-  .cards-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  /* side bar styles */
-  .side-bar {
-    display: block;
-    background-color: var(--secondary-clr);
-    width: 250px;
-    height: 145%;
-    border-right: 1px solid #e4ebfa;
-  }
-  .side-bar img {
-    width: 152.53px;
-    height: 25.22px;
-    margin-top: 37px;
-    margin-left: 27px;
-  }
-  .side-bar h4 {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--third-clr);
-    margin-top: 50px;
-    margin-left: 27px;
-    padding: 0px 12px 0px 60px;
-  }
-  .side-bar button {
-    margin-top: 15px;
-    width: 190px;
-    height: 48px;
-    border-radius: 0 30px 30px 0;
-    border: none;
-    background-color: var(--accent-clr);
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--secondary-clr);
-  }
-  .side-bar button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(15, 15, 15, 0.6);
-    background-color: var(--primary-clr);
-  }
+.modal-content{
+  margin-left: 290px;
+  width: 400px;
+}
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* side bar styles */
+.side-bar {
+  display: block;
+  background-color: var(--secondary-clr);
+  width: 200px;
+  height: 220%;
+  border-right: 1px solid #e4ebfa;
+}
+.side-bar img {
+  width: 150.53px;
+  height: 40.22px;
+  margin-top: 29px;
+  margin-left: 27px;
+}
+.side-bar h2 {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--third-clr);
+  margin-top: 50px;
+  margin-left: 27px;
+  padding: 0px 12px 0px 60px;
+}
+.side-bar button {
+  margin-top: 15px;
+  width: 190px;
+  height: 48px;
+  border-radius: 0 30px 30px 0;
+  border: none;
+  background-color: var(--accent-clr);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--secondary-clr);
+}
+.side-bar button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(15, 15, 15, 0.6);
+  background-color: var(--primary-clr);
+}
+
   /* the header styles */
-  .main-header {
-    height: 96px;
-    border-bottom: 1px solid #e4ebfa;
-  }
-  .main-header img {
-    display: none;
-  }
+.main-header {
+  height: 96px;
+  border-bottom: 1px solid #e4ebfa;
+}
+.main-header img {
+  display: none;
+}
+
+  /* toggle styles */
+.hide-sidebar{
+position: absolute;
+bottom: 16px;
+left: 0px;
+}
+.theme-toggle-container{
+  position: absolute;
+  bottom: 80px;
+  left: 18px;
+}
+.theme-toggle-container{
+  width: 150px;
+}
 }
 
 @media (min-width: 1024px) {
