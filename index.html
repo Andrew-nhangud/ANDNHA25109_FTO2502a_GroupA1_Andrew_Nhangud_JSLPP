@@ -63,11 +63,13 @@
           <div class="form-diveders">
             <label for="editTitle">Title</label>
             <input class="input-field" type="text" id="editTitle" />
+            <span class="error-message" id="newTitleError"></span> <!-- Error message span -->
           </div>
 
           <div class="form-diveders">
             <label for="editDescription">Description</label>
             <textarea class="Description-field" id="editDescription"></textarea>
+            <span class="error-message" id="newDescriptionError"></span> <!-- Error message span -->
           </div>
 
           <div class="form-diveders">
@@ -79,9 +81,18 @@
             </select>
           </div>
 
+          <div class="form-diveders">
+            <label for="editPriority">Priority</label>
+            <select class="input-field" id="editPriority">
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
+
           <div class="form-btn">
-            <button class="save-btn" id="saveEdit">Save Changes</button>
-            <button class="delete-btn" id="deleteTask">Delete Task</button>
+            <button class="save-btn" id="saveEdit" type="button">Save Changes</button>
+            <button class="delete-btn" id="deleteTask" type="button">Delete Task</button>
           </div>
         </form>
       </article>
@@ -98,11 +109,13 @@
           <div class="form-diveders">
             <label for="newTitle">Title</label>
             <input class="input-field" type="text" id="newTitle" />
+            <span class="error-message" id="newTitleError"></span> <!-- Error message span -->
           </div>
 
           <div class="form-diveders">
             <label for="newDescription">Description</label>
             <textarea class="Description-field" id="newDescription"></textarea>
+            <span class="error-message" id="newDescriptionError"></span> <!-- Error message span -->
           </div>
 
           <div class="form-diveders">
@@ -114,9 +127,18 @@
             </select>
           </div>
 
+          <div class="form-diveders">
+            <label for="addPriority">Priority</label>
+            <select class="input-field" id="addPriority">
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
+
           <div class="form-btn">
-            <button class="save-btn" id="saveNewTask">Save Changes</button>
-            <button class="delete-btn" id="deleteTask">Delete Task</button>
+            <button class="save-btn" id="saveNewTask" type="button">Save Changes</button>
+            <button class="delete-btn" id="deleteTask" type="button">Delete Task</button>
           </div>
         </form>
       </article>
