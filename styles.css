@@ -27,7 +27,6 @@ body {
 }
 
 
-
 /* styles for the side bar */
 .side-bar {
   display: none;
@@ -55,7 +54,7 @@ body {
   padding: 20px;
   border: 1px solid #888;
   width: 343px; 
-  height: 500px;
+  height: 600px;
   top: 45px;
 }
 .modal-content-header{
@@ -167,6 +166,8 @@ margin-top: 18px;
   font-size: 18px;
   font-weight: 700;
 }
+
+/* styles for the add tasks button on the mobile */
 .mobile-add-task {
   font-size: 24px;
   background-color: var(--accent-clr);
@@ -194,9 +195,10 @@ margin-top: 18px;
   box-shadow: 0 4px 12px rgba(15, 15, 15, 0.6);
 }
 
- .desktop-add-task {
-    display: none; /* Show on larger screens */
-  }
+/* hides the desktop add task button on the mobile screen */
+.desktop-add-task {
+  display: none; /* Show on larger screens */
+}
 
 /* cards container */
 .cards-container {
@@ -272,25 +274,24 @@ margin-top: 18px;
   border-radius: 10px;
 }
 #mobileSidebarModal .modal-content-header h2 {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--third-clr);
-
-    margin-left: 27px;
-    padding: 0px 12px 0px 10px;
-  }
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--third-clr);
+  margin-left: 27px;
+  padding: 0px 12px 0px 10px;
+}
 .mobileSidebar-btn button{
-    width: 250px;
-    height: 48px;
-    position: absolute;
-    left: -1px;
-    border-radius: 0 30px 30px 0;
-    border: none;
-    background-color: var(--accent-clr);
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--secondary-clr);
-    margin-top: 19px;
+  width: 250px;
+  height: 48px;
+  position: absolute;
+  left: -1px;
+  border-radius: 0 30px 30px 0;
+  border: none;
+  background-color: var(--accent-clr);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--secondary-clr);
+  margin-top: 19px;
 }
 
 /* Styling the toggle switch */
@@ -343,24 +344,22 @@ margin-top: 18px;
   border-radius: 50%;
   margin-right: 8px;
 }
-
+/* styles to show the color of the priority */
 .priority-circle.high {
   background-color: red;
 }
-
 .priority-circle.medium {
   background-color: orange;
 }
-
 .priority-circle.low {
   background-color: green;
 }
 
 /* Ensure sidebar is hidden on smaller screens */
 @media (max-width: 767px) {
-  .side-bar {
-    display: none !important;
-  }
+.side-bar {
+  display: none !important;
+}
 }
 
 /* media querys */
@@ -399,9 +398,12 @@ body.sidebar-hidden .main-header {
   width: 100% !important;
 }
 
+/* styles to hide to mobile add tasks button */
 .mobile-add-task {
   display: none; /* Hide on larger screens */
 }
+
+/* styles for the tablet and desktop add tasks button */
 .desktop-add-task {
   display: block; /* Show on larger screens */ 
   position: absolute;
@@ -422,7 +424,7 @@ body.sidebar-hidden .main-header {
   color: var(--secondary-clr);
 }
 
-  /*styles for modal content  */
+/*styles for modal content  */
 .modal-content{
   margin-left: 290px;
   width: 400px;
@@ -472,7 +474,7 @@ body.sidebar-hidden .main-header {
   background-color: var(--primary-clr);
 }
 
-  /* the header styles */
+/* the header styles */
 .main-header {
   height: 96px;
   border-bottom: 1px solid #e4ebfa;
@@ -481,7 +483,7 @@ body.sidebar-hidden .main-header {
   display: none;
 }
 
-  /* toggle styles */
+/* dark mode toggle styles */
 .hide-sidebar{
 position: absolute;
 bottom: 16px;
@@ -507,6 +509,7 @@ body.sidebar-hidden .desktop-add-task {
   transform: translateX(300px); /* Shift the button to the left */
 }
 
+/* styles for the add task button */
 .desktop-add-task {
   display: block; /* Show on larger screens */ 
   position: absolute;
@@ -515,18 +518,18 @@ body.sidebar-hidden .desktop-add-task {
   height: 38px;
 }
 
-   /*styles for modal content  */
+/*styles for modal content  */
 .modal{
   overflow: hidden;
 }
 .modal-content{
   margin-left: 590px;
   width: 479px;
-  height: 479px;
-  top: -50px;
+  height: 539px;
+  top: -85px;
 }
 
-  /* styles for modal buttons */
+/* styles for modal buttons */
 .form-btn{
   display: flex;
   flex-direction: row;
@@ -559,6 +562,7 @@ body.sidebar-hidden .desktop-add-task {
   width: 276px;
 }
 
+/* the header styles */
 .main-header {
   height: 96px;
 }
