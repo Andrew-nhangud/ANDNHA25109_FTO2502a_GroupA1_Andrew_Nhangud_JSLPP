@@ -8,6 +8,9 @@ import {
   getTasks,
 } from "./tasks.js";
 import { getPriorityValue } from "./priority.js"; // Import the function
+import { validateTaskForm } from "./validations.js";
+
+let taskToDelete = null;
 
 // Opens the edit modal for a specific task
 function openEditModal(task) {
@@ -22,18 +25,44 @@ function openEditModal(task) {
   window.currentEditingTaskId = task.id;
 
   // Set up the delete button to delete the task
-  document.getElementById("deleteTask").onclick = () => deleteTask(task.id);
+  document.getElementById("deleteTask").onclick = () =>
+    showConfirmationModal(task.id);
+}
+
+// Shows a notification message
+function showNotification(message) {
+  const notificationModal = document.getElementById("notificationModal");
+  const notificationMessage = document.getElementById("notificationMessage");
+
+  notificationMessage.textContent = message;
+  notificationModal.style.display = "block";
+
+  setTimeout(() => {
+    notificationModal.style.display = "none";
+  }, 2000); // Hide after 2 seconds
 }
 
 // Saves a new task to the task list
 function saveNewTask() {
+  const title = document.getElementById("newTitle").value;
+  const description = document.getElementById("newDescription").value;
+
+  const errors = validateTaskForm(title, description);
+
+  if (Object.keys(errors).length > 0) {
+    document.getElementById("newTitleError").textContent = errors.title || "";
+    document.getElementById("newDescriptionError").textContent =
+      errors.description || "";
+    return;
+  }
+
   const newTaskId = getTasks().length
     ? Math.max(...getTasks().map((t) => t.id)) + 1
     : 1;
   const newTask = {
     id: newTaskId,
-    title: document.getElementById("newTitle").value,
-    description: document.getElementById("newDescription").value,
+    title,
+    description,
     status: document.getElementById("newStatus").value,
     priority: getPriorityValue("addPriority"), // Get the selected priority
   };
@@ -42,16 +71,29 @@ function saveNewTask() {
   addTask(newTask);
   document.getElementById("addTaskModal").style.display = "none";
   renderTasks();
+  showNotification("Task Added");
 }
 
 // Saves the edited task details
 function saveEdit() {
+  const title = document.getElementById("editTitle").value;
+  const description = document.getElementById("editDescription").value;
+
+  const errors = validateTaskForm(title, description);
+
+  if (Object.keys(errors).length > 0) {
+    document.getElementById("editTitleError").textContent = errors.title || "";
+    document.getElementById("editDescriptionError").textContent =
+      errors.description || "";
+    return;
+  }
+
   const taskId = window.currentEditingTaskId; // Use the stored task ID
 
   const updatedTask = {
     id: taskId,
-    title: document.getElementById("editTitle").value,
-    description: document.getElementById("editDescription").value,
+    title,
+    description,
     status: document.getElementById("editStatus").value, // Get the selected status
     priority: getPriorityValue("editPriority"), // Get the selected priority
   };
@@ -68,7 +110,38 @@ function deleteTask(taskId) {
   deleteTaskFromTasks(taskId);
   document.getElementById("editTaskModal").style.display = "none"; // Close the modal
   renderTasks(); // Re-render the tasks to reflect the deletion
+  showNotification("Task Removed");
 }
+
+function showConfirmationModal(taskId) {
+  taskToDelete = taskId;
+  const confirmationModal = document.getElementById("confirmationModal");
+  confirmationModal.style.display = "block";
+}
+
+function hideConfirmationModal() {
+  const confirmationModal = document.getElementById("confirmationModal");
+  confirmationModal.style.display = "none";
+  taskToDelete = null;
+}
+
+function confirmDeleteTask() {
+  if (taskToDelete !== null) {
+    deleteTaskFromTasks(taskToDelete);
+    renderTasks();
+    showNotification("Task Removed");
+  }
+  document.getElementById("editTaskModal").style.display = "none"; // Close the edit modal
+  hideConfirmationModal();
+}
+
+function setupConfirmationModal() {
+  document.getElementById("confirmDelete").onclick = confirmDeleteTask;
+  document.getElementById("cancelDelete").onclick = hideConfirmationModal;
+}
+
+// Call setupConfirmationModal when the page loads
+setupConfirmationModal();
 
 // Opens the modal to add a new task
 function openAddTaskModal() {
