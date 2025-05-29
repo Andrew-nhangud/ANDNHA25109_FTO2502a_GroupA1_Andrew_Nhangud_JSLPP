@@ -1,25 +1,19 @@
 // validations.js
 
-// Add validation logic for forms
-function validateForm(formId, errorMessages) {
-  const form = document.getElementById(formId);
-  let isValid = true;
+export function validateTaskForm(title, description) {
+  const errors = {};
 
-  errorMessages.forEach(({ fieldId, errorId, message }) => {
-    const field = document.getElementById(fieldId);
-    const errorElement = document.getElementById(errorId);
+  if (!title || title.trim() === "") {
+    errors.title = "Title is required.";
+  } else if (title.length > 50) {
+    errors.title = "Title cannot exceed 50 characters.";
+  }
 
-    if (errorElement) {
-      if (!field.value.trim()) {
-        errorElement.textContent = message;
-        isValid = false;
-      } else {
-        errorElement.textContent = "";
-      }
-    }
-  });
+  if (!description || description.trim() === "") {
+    errors.description = "Description is required.";
+  } else if (description.length > 200) {
+    errors.description = "Description cannot exceed 200 characters.";
+  }
 
-  return isValid;
+  return errors;
 }
-
-export { validateForm };
