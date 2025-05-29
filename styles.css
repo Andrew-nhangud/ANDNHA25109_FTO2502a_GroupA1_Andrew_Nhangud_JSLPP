@@ -262,7 +262,6 @@ margin-top: 18px;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
 }
-
 /* Updated styles for Mobile Sidebar Modal */
 #mobileSidebarModal .modal-content {
   width: 340px;
@@ -277,7 +276,6 @@ margin-top: 18px;
     margin-left: 27px;
     padding: 0px 12px 0px 10px;
   }
-
 .mobileSidebar-btn button{
     width: 250px;
     height: 48px;
@@ -290,6 +288,48 @@ margin-top: 18px;
     font-weight: 700;
     color: var(--secondary-clr);
     margin-top: 19px;
+}
+
+/* Styling the toggle switch */
+.theme-toggle-container { 
+  position: absolute;
+  bottom: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  gap: 15px;
+  background-color: var(--background-clr);
+  width: 251px;
+  height: 48px;
+}
+.theme-toggle-container input[type="checkbox"] {
+  appearance: none;
+  width: 40px;
+  height: 20px;
+  background: var(--third-clr);
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.3s ease;
+}
+.theme-toggle-container input[type="checkbox"]:checked {
+  background: var(--accent-clr);
+}
+.theme-toggle-container input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: var(--secondary-clr);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+.theme-toggle-container input[type="checkbox"]:checked::before {
+  transform: translateX(20px);
 }
 
 /* media querys */
