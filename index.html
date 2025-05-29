@@ -12,9 +12,9 @@
 <body>
   <!-- Navigation Sidebar: Contains the logo, navigation links for boards, and theme toggle. -->
   <nav class="side-bar">
-    <>
+    <div>
       <img src="assets/logo-light.svg" alt="logo" />
-      <h4>ALL BOARDS (1)</h4>
+      <h2>ALL BOARDS (1)</h2>
       <button>Launch Career</button>
       <div class="theme-toggle-container">
         <span class="icon-sun">🌞</span>
@@ -22,7 +22,7 @@
         <span class="icon-moon">🌜</span>
       </div>
       <button id="hideSidebar" class="hide-sidebar">Hide Sidebar</button>
-      </div>
+    </div>
   </nav>
 
   <div>
@@ -33,6 +33,24 @@
       <button id="mobileAddTaskButton" class="mobile-add-task"><span>+</span></button>
       <button id="addTaskButton" class="desktop-add-task"> <span>+ Add Task</span></button>
     </header>
+
+    <!-- Mobile Sidebar Modal -->
+    <section id="mobileSidebarModal" class="modal">
+      <article class="modal-content">
+        <div class="modal-content-header">
+          <h2>ALL BOARDS (1)</h2>
+          <button class="close" id="closeMobileSidebar">&times;</button>
+        </div>
+        <div class="mobileSidebar-btn">
+          <button>Launch Career</button>
+          <div class="theme-toggle-container">
+            <span class="icon-sun">🌞</span>
+            <input type="checkbox" id="mobileThemeToggle" />
+            <span class="icon-moon">🌜</span>
+          </div>
+        </div>
+      </article>
+    </section>
 
     <!-- Edit Task Modal -->
     <section id="editTaskModal" class="modal">
