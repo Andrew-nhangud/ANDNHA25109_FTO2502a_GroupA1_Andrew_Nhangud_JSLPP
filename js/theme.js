@@ -1,0 +1,23 @@
+// theme.js
+
+// Function to initialize dark mode based on user preference
+export function initializeTheme() {
+  const themeToggle = document.getElementById("themeToggle");
+
+  // Check for saved user preference in local storage
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    themeToggle.checked = true; // Set the toggle to checked
+  }
+
+  // Add event listener to toggle dark mode
+  themeToggle.addEventListener("change", () => {
+    if (themeToggle.checked) {
+      document.body.classList.add("dark-mode");
+      localStorage.setItem("theme", "dark"); // Save preference
+    } else {
+      document.body.classList.remove("dark-mode");
+      localStorage.setItem("theme", "light"); // Save preference
+    }
+  });
+}
