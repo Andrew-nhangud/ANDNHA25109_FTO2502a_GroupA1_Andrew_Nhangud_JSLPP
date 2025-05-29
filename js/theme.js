@@ -1,6 +1,9 @@
 // theme.js
 
-// Function to initialize dark mode based on user preference
+/**
+ * Initializes the theme based on user preferences.
+ * Adds event listeners for theme toggling.
+ */
 export function initializeTheme() {
   const themeToggle = document.getElementById("themeToggle");
 

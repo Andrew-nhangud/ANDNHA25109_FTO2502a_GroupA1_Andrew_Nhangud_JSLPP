@@ -7,7 +7,10 @@ import { fetchTasksFromAPI } from "./api.js"; // Import the API function
 // Private tasks array
 let tasks = [];
 
-// Load tasks from local storage
+/**
+ * Loads tasks from local storage.
+ * Parses the stored JSON string into an array.
+ */
 function loadTasksFromLocalStorage() {
   const storedTasks = localStorage.getItem("tasks");
   if (storedTasks) {
@@ -17,7 +20,10 @@ function loadTasksFromLocalStorage() {
   }
 }
 
-// Fetch tasks from the API and update the tasks array
+/**
+ * Fetches tasks from the API and updates the tasks array.
+ * Combines API tasks with local tasks, avoiding duplicates.
+ */
 async function loadTasks() {
   const apiTasks = await fetchTasksFromAPI(); // Fetch tasks from the API
 
@@ -33,17 +39,31 @@ async function loadTasks() {
 }
 
 // Return a copy of tasks array
+/**
+ * Returns a copy of the tasks array.
+ * @returns {Array} A copy of the tasks array.
+ */
 export function getTasks() {
   return tasks.slice();
 }
 
 // Add new task
+/**
+ * Adds a new task to the tasks array.
+ * Updates local storage.
+ * @param {Object} newTask - The new task to add.
+ */
 export function addTask(newTask) {
   tasks.push(newTask);
   localStorage.setItem("tasks", JSON.stringify(tasks)); // Update local storage
 }
 
 // Update existing task
+/**
+ * Updates an existing task in the tasks array.
+ * Updates local storage.
+ * @param {Object} updatedTask - The task to update.
+ */
 export function updateTask(updatedTask) {
   const taskIndex = tasks.findIndex((task) => task.id === updatedTask.id);
   if (taskIndex !== -1) {

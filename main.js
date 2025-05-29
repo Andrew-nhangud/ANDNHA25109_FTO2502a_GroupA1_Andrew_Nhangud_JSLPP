@@ -13,24 +13,40 @@ import {
 } from "./js/modal.js";
 import { renderTasks } from "./js/tasks.js";
 
-// Initialize the theme when the script loads
+/**
+ * Initializes the theme based on user preferences.
+ */
 initializeTheme();
 
-// Remove validation logic for editing a task
+/**
+ * Event handler for saving edits.
+ * Calls the saveEdit function directly.
+ */
 document.getElementById("saveEdit").onclick = function () {
-  saveEdit(); // Call the saveEdit function directly
+  saveEdit();
 };
 
-// Remove validation logic for saving new tasks
+/**
+ * Event handler for saving new tasks.
+ * Calls the saveNewTask function directly.
+ */
 document.getElementById("saveNewTask").onclick = function () {
-  saveNewTask(); // Call the saveNewTask function directly
+  saveNewTask();
 };
 
-// Add event listener to close modals
+/**
+ * Event handler to close the edit modal.
+ */
 document.getElementById("closeEditModal").onclick = closeEditModal;
+
+/**
+ * Event handler to close the add modal.
+ */
 document.getElementById("closeAddModal").onclick = closeAddModal;
 
-// Add event listener to open the add task modal
+/**
+ * Event handler to open the add task modal.
+ */
 document
   .getElementById("addTaskButton")
   .addEventListener("click", openAddTaskModal);
@@ -38,5 +54,7 @@ document
   .getElementById("mobileAddTaskButton")
   .addEventListener("click", openAddTaskModal);
 
-// Initial render
+/**
+ * Renders the tasks on the page.
+ */
 renderTasks();

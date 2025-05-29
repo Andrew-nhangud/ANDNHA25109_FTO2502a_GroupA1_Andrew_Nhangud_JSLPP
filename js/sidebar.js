@@ -8,12 +8,20 @@ const sidebar = document.querySelector(".side-bar");
 // Add logic to dynamically toggle the sidebar-hidden class on the body
 const body = document.body;
 
+/**
+ * Event handler to hide the sidebar.
+ * Updates the display and adds the sidebar-hidden class to the body.
+ */
 hideSidebarButton.addEventListener("click", () => {
   sidebar.style.display = "none";
   unhideSidebarButton.style.display = "block";
   body.classList.add("sidebar-hidden");
 });
 
+/**
+ * Event handler to unhide the sidebar.
+ * Updates the display and removes the sidebar-hidden class from the body.
+ */
 unhideSidebarButton.addEventListener("click", () => {
   sidebar.style.display = "block";
   unhideSidebarButton.style.display = "none";
@@ -24,6 +32,9 @@ unhideSidebarButton.addEventListener("click", () => {
 const mobileSidebarModal = document.getElementById("mobileSidebarModal");
 const mainHeaderImage = document.querySelector(".main-header img");
 
+/**
+ * Event handler to show the mobile sidebar modal.
+ */
 mainHeaderImage.addEventListener("click", () => {
   mobileSidebarModal.style.display = "block";
 });
@@ -33,11 +44,17 @@ const closeMobileSidebarButton = document.getElementById("closeMobileSidebar");
 const mobileThemeToggle = document.getElementById("mobileThemeToggle");
 
 // Close mobile sidebar modal
+/**
+ * Event handler to close the mobile sidebar modal.
+ */
 closeMobileSidebarButton.addEventListener("click", () => {
   mobileSidebarModal.style.display = "none";
 });
 
 // Toggle light and dark mode
+/**
+ * Event handler to toggle light and dark mode.
+ */
 mobileThemeToggle.addEventListener("change", () => {
   if (mobileThemeToggle.checked) {
     document.body.classList.add("dark-mode");
@@ -46,5 +63,7 @@ mobileThemeToggle.addEventListener("change", () => {
   }
 });
 
-// Export the sidebar toggle functionality
+/**
+ * Exports the sidebar toggle functionality.
+ */
 export { hideSidebarButton, unhideSidebarButton, sidebar };

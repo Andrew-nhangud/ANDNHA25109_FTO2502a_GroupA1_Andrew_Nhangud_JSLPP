@@ -12,7 +12,11 @@ import { validateTaskForm } from "./validations.js";
 
 let taskToDelete = null;
 
-// Opens the edit modal for a specific task
+/**
+ * Opens the edit modal for a specific task.
+ * Populates the modal fields with the task data.
+ * @param {Object} task - The task to edit.
+ */
 function openEditModal(task) {
   // Populate the modal fields with the task data
   document.getElementById("editTitle").value = task.title;
@@ -42,7 +46,10 @@ function showNotification(message) {
   }, 2000); // Hide after 2 seconds
 }
 
-// Saves a new task to the task list
+/**
+ * Saves a new task to the task list.
+ * Validates the task form inputs.
+ */
 function saveNewTask() {
   const title = document.getElementById("newTitle").value;
   const description = document.getElementById("newDescription").value;
@@ -74,7 +81,9 @@ function saveNewTask() {
   showNotification("Task Added");
 }
 
-// Saves the edited task details
+/**
+ * Saves the edited task details.
+ */
 function saveEdit() {
   const title = document.getElementById("editTitle").value;
   const description = document.getElementById("editDescription").value;

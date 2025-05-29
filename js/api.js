@@ -1,6 +1,9 @@
 // api.js
 
-// Function to fetch tasks from the API
+/**
+ * Fetches tasks from the API.
+ * @returns {Promise<Array>} A promise that resolves to an array of tasks.
+ */
 export async function fetchTasksFromAPI() {
   try {
     const response = await fetch("https://jsl-kanban-api.vercel.app/");

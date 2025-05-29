@@ -1,5 +1,11 @@
 // validations.js
 
+/**
+ * Validates the task form inputs.
+ * @param {string} title - The title of the task.
+ * @param {string} description - The description of the task.
+ * @returns {Object} An object containing validation errors.
+ */
 export function validateTaskForm(title, description) {
   const errors = {};
 
