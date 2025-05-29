@@ -332,6 +332,27 @@ margin-top: 18px;
   transform: translateX(20px);
 }
 
+/* Add styles for priority circles */
+.priority-circle {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.priority-circle.high {
+  background-color: red;
+}
+
+.priority-circle.medium {
+  background-color: orange;
+}
+
+.priority-circle.low {
+  background-color: green;
+}
+
 /* media querys */
 @media (min-width: 768px) {
   body {
