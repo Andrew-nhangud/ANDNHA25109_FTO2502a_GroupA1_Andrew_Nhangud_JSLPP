@@ -13,9 +13,19 @@
   --third-clr: #828fa3;
   --accent-clr: #635fc7;
 }
+/* dark mode colors */
+body.dark-mode {
+  --background-clr: #20212C; /* Dark mode background */
+  --primary-clr: #fff; /* Dark mode primary color */
+  --secondary-clr: #2B2C37; /* Dark mode secondary color */
+  --third-clr: #828fa3; /* Dark mode third color */
+  --accent-clr: #635fc7; /* Dark mode accent color */
+}
 body {
   background-color: var(--background-clr);
 }
+
+
 
 /* styles for the side bar */
 .side-bar {
@@ -242,6 +252,44 @@ margin-top: 18px;
   background-color: var(--accent-clr);
   color: var(--secondary-clr);
   box-shadow: 0 4px 12px rgba(15, 15, 15, 0.6);
+}
+
+/* Mobile Sidebar Modal Styles */
+#mobileSidebarModal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+}
+
+/* Updated styles for Mobile Sidebar Modal */
+#mobileSidebarModal .modal-content {
+  width: 340px;
+  height: 200px;
+  border-radius: 10px;
+}
+#mobileSidebarModal .modal-content-header h2 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--third-clr);
+
+    margin-left: 27px;
+    padding: 0px 12px 0px 10px;
+  }
+
+.mobileSidebar-btn button{
+    width: 250px;
+    height: 48px;
+    position: absolute;
+    left: -1px;
+    border-radius: 0 30px 30px 0;
+    border: none;
+    background-color: var(--accent-clr);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--secondary-clr);
+    margin-top: 19px;
 }
 
 /* media querys */
