@@ -2,6 +2,10 @@
 
 A responsive and dynamic Kanban board website designed to manage tasks efficiently. The project emphasizes clean design and user-friendly functionality.
 
+## 🔗 Project Links
+- **📽️ Presentation:** [View the project presentation](#)  
+- **🌍 Live Demo:** [Check out the deployed version on Netlify](#)
+
 ## ✨ Usage  
 - Click **"Add Task"** to create a new task.  
 - Click on a task to open the **Edit Task Modal** for modifications.  
@@ -11,6 +15,18 @@ A responsive and dynamic Kanban board website designed to manage tasks efficient
 ## 🎨 UI/UX Highlights  
 - **Font:** Uses *Plus Jakarta Sans* for a modern and clean appearance.  
 - **Mobile-Optimized Add Task Button:** Swaps UI interaction based on screen size.  
+
+## 🌟 Core Features
+- **API Integration:** Fetches initial task data from an external API and stores it in **localStorage** for persistence.
+- **Task Management:** Users can **edit**, **delete**, and manage tasks dynamically with a seamless interface.
+- **Sidebar Interactions:** The **sidebar** opens and closes smoothly on both **desktop** and **mobile** views for optimized navigation.
+- **Theme Toggle:** Users can effortlessly **switch between dark and light modes** to match their preference.
+- **Responsive & Accessible:** Designed for **clarity and ease of use**, ensuring all interactions are intuitive and well-supported across different devices.
+
+## 💡 User Experience
+- **Simple Setup:** Clear instructions allow users to interact with the app effortlessly.
+- **Persistent Data Storage:** Updates remain **saved** even after page refreshes.
+- **Fluid Navigation:** Thoughtfully designed **UI elements** for an enhanced workflow.
 
 ## Features
 - **Task Management:** Add, edit, and delete tasks dynamically.  
@@ -26,11 +42,7 @@ A responsive and dynamic Kanban board website designed to manage tasks efficient
 - **JavaScript** –  
   - **LocalStorage** for persistent task saving.  
   - **DOM Manipulation** for dynamic rendering.  
-  - **Event Listeners** for user interactions.  
-
-## 🔧 Future Enhancements  
-- **Dark & Light Theme Ready:** Easily adaptable with **CSS variables**.  
-- **Form Handling Messages:** Improve user feedback for form interactions.  
+  - **Event Listeners** for user interactions.   
 
 ## How to Use
 1. Clone the repository to your local machine.
