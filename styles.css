@@ -369,6 +369,13 @@ margin-top: 18px;
   bottom: 70px;
 }
 
+/* error message styles*/
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
 /* styles for the nofication modal */
 #notificationModal {
   display: none; /* Hidden by default */
