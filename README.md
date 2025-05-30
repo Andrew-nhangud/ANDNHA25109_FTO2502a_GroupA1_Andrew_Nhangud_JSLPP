@@ -3,8 +3,8 @@
 A responsive and dynamic Kanban board website designed to manage tasks efficiently. The project emphasizes clean design and user-friendly functionality.
 
 ## 🔗 Project Links
-- **📽️ Presentation:** [View the project presentation](#)  
-- **🌍 Live Demo:** [Check out the deployed version on Netlify](#)
+- **📽️ Presentation:** [View the project presentation](https://www.veed.io/view/643ec059-029b-434f-957e-6a88f352c79f?panel=share)  
+- **🌍 Live Demo:** [Check out the deployed version on Netlify](https://andnha-25109-fto-2502a-group-a1-and.vercel.app/)
 
 ## ✨ Usage  
 - Click **"Add Task"** to create a new task.  
